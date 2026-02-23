@@ -1,14 +1,14 @@
 - name: install and start nginx
   hosts: frontend
-  become: yes
-  tasks:
-  - name: install nginx
-    ansible.builtin.package:
-      name: nginx
-      state: present
+  become: yes  #to run the tasks with root privileges
+  tasks: #to define the tasks to be executed on the target hosts
+  - name: install nginx #to install nginx package
+    ansible.builtin.package:   #Ansible module to manage packages
+      name: nginx #to specify the package name
+      state: present #to ensure nginx is installed
 
   - name: start nginx
-    ansible.builtin.service:
+    ansible.builtin.service: #Ansible module to manage services
       name: nginx
-      state: started
-      enabled: yes
+      state: started #to start the service
+      enabled: yes #to enable the service
