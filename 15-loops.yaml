@@ -1,0 +1,28 @@
+# - name: loops
+#   hosts: local
+#   connection: local
+#   tasks:
+#   - name: print the numbers from 1 to 5
+#     ansible.builtin.debug:
+#       msg: "Number is {{ item }}" #item is a special variable that holds the current item in the loop
+#     loop: # to iterate the list of items
+#     - Shiva
+#     - lavanya
+#     - Sunitha
+
+
+    - name: loops
+      hosts: local
+      connection: local
+      become: yes # to install the nginx package we need root privileges, so we have used become: yes to elevate the privileges to root user
+      tasks:
+      - name: print the numbers from 1 to 5
+        ansible.builtin.package:
+          name: nginx
+          state: present
+            msg:"{{ item }}" #item is a special variable that holds the current item in the loop
+        loop: # to iterate the list of items
+          - nginx
+          - mysql
+          - redis
+           

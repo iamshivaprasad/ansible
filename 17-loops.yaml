@@ -1,0 +1,13 @@
+- name: Install packages
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: print names
+    ansible.builtin.package:
+      name: "{{ item.name }}" # to refer the name and state from the loop item we have used item.name and item.state
+      state: "{{ item.state }}" # to refer the name and state from the loop item we have used item.name and item.state
+    loop:
+    - { name: "nginx", state: "absent"}
+    - { name: "mysql", state: "absent"}
+    - { name: "zip", state: "latest"}
