@@ -1,0 +1,20 @@
+- name: data types
+  hosts: local
+  connection: local
+  vars:
+    Course: "Ansible for Beginners" #string data type
+    Duration: 2 #integer data type
+    is_live: true #boolean data type
+    tools: #["Ansible", "Docker", "Kubernetes"] #list data type
+      - "Ansible"
+      - "Docker"
+      - "Kubernetes"
+    concepts: #dictionary data type
+          cloud: aws
+          cm: ansible
+  tasks:
+  - name: print the course details
+    ansible.builtin.debug:
+      msg: >-
+        Course: {{ Course }}, Duration: {{ Duration }} hours, Is Live: {{ is_live }}, Tools:
+        {{ tools }}, Concepts: {{ concepts }}
