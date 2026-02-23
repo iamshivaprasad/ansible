@@ -18,3 +18,7 @@
       msg: >-
         Course: {{ Course }}, Duration: {{ Duration }} hours, Is Live: {{ is_live }}, Tools:
         {{ tools }}, Concepts: {{ concepts }}
+
+
+# list: []
+# map: {}
