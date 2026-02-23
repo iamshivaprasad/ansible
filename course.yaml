@@ -1,0 +1,3 @@
+COURSE: "Ansible for Beginners" #to define the variable COURSE with the value "Ansible for Beginners"
+DURATION: "2 hours" #to define the variable DURATION with the value "2 hours"
+TRAINER: "SHIVA" #to define the variable TRAINER with the value "SHIVA"

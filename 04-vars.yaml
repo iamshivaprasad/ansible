@@ -1,0 +1,11 @@
+- name: play level variables
+  host: local
+  connection: local #to run the tasks on the local machine
+  vars:
+    COURSE: "Ansible for Beginners" #to define the variable COURSE with the value "Ansible for Beginners"
+    DURATION: "2 hours" #to define the variable DURATION with the value "2 hours"
+    TRAINER: "SHIVA" #to define the variable TRAINER with the value "SHIVA"
+  tasks:
+   - name: print the course details
+     ansible.builtin.debug:
+       msg: "Course: {{ COURSE }}, Duration: {{ DURATION }}, Trainer: {{ TRAINER }}" #to print the course details using the variables defined at the play level
