@@ -2,5 +2,6 @@
   hosts: frontend # Which server you are connecting to
   # List of tasks/collections/modules
   tasks:
-  - name: ping
-    ansible.builtin.ping:
+  - name: ping # Name of the task
+    ansible.builtin.ping: # Ansible module to check the connectivity of the target hosts
+    
